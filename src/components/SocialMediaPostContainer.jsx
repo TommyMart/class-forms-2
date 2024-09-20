@@ -16,6 +16,16 @@ export default class SocialMediaPostContainer extends React.Component {
         }
     }
 
+    // Function that updates the state
+    updatePostData = (newAuthor, newLocation, newContent) => {
+        this.setState({
+            author: newAuthor,
+            lastUpdated: Date.now(),
+            location: newLocation,
+            content: newContent
+        });
+    }
+
     // Changes isEditing boolean value
     toggleEditMode = () => {
         this.setState({isEditing: !this.state.isEditing});
@@ -34,11 +44,14 @@ export default class SocialMediaPostContainer extends React.Component {
                     Toggle Edit Mode
                 </button>
                 <EditablePost 
+                // props
                     author={this.state.author}
                     dateCreated={this.state.dateCreated}
                     lastUpdated={this.state.lastUpdated}
                     location={this.state.location} 
                     content={this.state.content}
+                    
+                    updateData={this.updatePostData}
                 />
             </>
             )
