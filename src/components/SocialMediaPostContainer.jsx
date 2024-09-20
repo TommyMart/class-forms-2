@@ -44,13 +44,13 @@ export default class SocialMediaPostContainer extends React.Component {
                     Toggle Edit Mode
                 </button>
                 <EditablePost 
-                // props
+                // props that can be accessed by child component 
                     author={this.state.author}
                     dateCreated={this.state.dateCreated}
                     lastUpdated={this.state.lastUpdated}
                     location={this.state.location} 
                     content={this.state.content}
-                    
+
                     updateData={this.updatePostData}
                 />
             </>
